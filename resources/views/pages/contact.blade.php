@@ -13,6 +13,10 @@
                     <input name="email" type="email" class="form-control" id="email" placeholder="name@example.com">
                 </div>
                 <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input name="subject" class="form-control" id="subject" placeholder="subject">
+                </div>
+                <div class="form-group">
                     <label for="body">Message</label>
                     <textarea name="body" class="form-control" id="body" rows="3"></textarea>
                 </div>
