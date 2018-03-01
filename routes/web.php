@@ -11,17 +11,15 @@
 |
 */
 
-Route::get('/', function () {
-    return view('pages.index');
-});
+Route::get('/', 'PagesController@index')->name('home');
 
-Route::get('/about', function () {
-    return view('pages.about');
-});
+Route::get('/about', 'PagesController@about')->name('about');
 
-Route::get('/contact', function () {
-    return view('pages.contact');
-});
+Route::get('/contact', 'PagesController@contact')->name('contact');
+
+Route::post('/contact', 'PagesController@store')->name('contact.store');
+
+Route::get('/thanks/{name}', 'PagesController@thanks')->name('thanks');
 
 Route::get('/login', function () {
     return view('pages.login');
@@ -43,9 +41,9 @@ Route::get('/card', function () {
     return view('pages.card');
 });
 
-Route::post('/contact', function () {
-    $data = request()->all();
-    echo "Email:".$data['email']. '<br>';
-    echo "Subject:".$data['subject']. '<br>';
-    echo "Body:".$data['body'];
-});
+//Route::post('/contact', function () {
+    //$data = request()->all();
+    //echo "Email:".$data['email']. '<br>';
+    //echo "Subject:".$data['subject']. '<br>';
+    //echo "Body:".$data['body'];
+//});
